@@ -1,0 +1,13 @@
+version: "3"
+services:
+  sbt:
+    tty: true
+    stdin_open: true
+    build: .
+    volumes:
+      - .:/work
+    links:
+      - postgis
+    command: sh
+  postgis:
+    image: mdillon/postgis
